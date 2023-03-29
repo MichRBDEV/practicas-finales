@@ -1,42 +1,18 @@
- <?php include "coneccion.php";
-              "Acciones.php";
-         / recuperar e insertar datos
- include "coneccion.php";
- if (sset($_POST['btn'])){
-    $nombre = $conecta -> real_escape_string($_POST['nombre']);
-    $apellidos = $conex -> real_escape_string($_POST['apellidos']);
-    $direccion = $conex -> real_escape_string($_POST['direccion']);
-    $telefono = $conex -> real_escape_string($_POST['telefono']);
-    $fecha_nac = $conex -> real_escape_string($_POST['fecha_nac']);
-    $email = $conex -> real_escape_string($_POST['email']);
-    if ($nombre == " " || $apellidos == " " || $direccion == " " || $telefono == " " || $fecha_nac == " " || $email == " "){
-        $alerta = "ALGUNO DE LOS DATOS ESTAN VACIOS";
-    }
-    else {
- $registro = "INSERT INTO Usuario(nombre, apellidos, direccion, telefono, fecha_nac, email) VALUES ('$nombre', '$apellidos', '$direccion', '$telefono', 'fecha_nac', 'email')";
- $registro = $conex -> query ($registro);
- if ($registros>o)
-    }
-    echo "registro exitoso";
- }else{
-    echo "error al registrar";
- }
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>REGISTRO</title>
 </head>
 <body>
     <div class="container m-o contents-justify-center py-2">
         <div class="row text_center">
             <h1 class="text_sucess">Registro</h1>
 </div>
-<form id= "Registro" Action="<?php echo $_SERVER ['php_SELF'];?>" Method="POST">
+<form id="Registro" Action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
 <div class="row text_center">
     <div class="col-sm-12 col-md-12 col-lg-12">
         <input type ="text" name="Nombre" class= "form_control" placeholder="Nombre" required>
@@ -54,7 +30,7 @@
 </div>
 <div class="row text_center">
     <div class="col-sm-12 col-md-12 col-lg-12">
-        <input type ="TEL" name="Telefono" class= "form_control" placeholder="55-55-55-55" required>
+        <input type ="text" name="Telefono" class= "form_control" placeholder="Telefono" required>
     </div>
 </div>
 <div class="row text_center">
@@ -69,12 +45,12 @@
 </div>
 <div class="row text_center">
     <div class="col-sm-12 col-md-12 col-lg-12">
-        <input type ="submit" value="Registrar" name="btn" class="btn" btn-sucess>
+        <input type ="submit" value="Registrar" name="btn" class="btn btn-sucess">
     </div>
 </div>
 </form>
-
-
+<?php include "acciones.php"?>
+<?php include "coneccion.php"?>
     
 </body>
 </html>

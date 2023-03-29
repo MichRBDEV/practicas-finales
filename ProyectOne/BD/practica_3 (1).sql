@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-03-2023 a las 20:34:45
+-- Tiempo de generación: 27-03-2023 a las 20:53:37
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.1.12
 
@@ -61,6 +61,14 @@ CREATE TABLE `plantel` (
   `responsable` varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `plantel`
+--
+
+INSERT INTO `plantel` (`Id_plantel`, `nombre_plantel`, `clave_plantel`, `direccion_plantel`, `telefono_plantel`, `responsable`) VALUES
+(1, 'conalep', 'con4l3p', 'naucalpan', '5567830978', 'director'),
+(2, 'conalep', 'con4l3p', 'naucalpan', '5567830978', 'director');
+
 -- --------------------------------------------------------
 
 --
@@ -87,7 +95,8 @@ INSERT INTO `registro` (`Id_registro`, `nombre`, `apellidos`, `direccion`, `tele
 (3, 'andro', 'gomez', 'Direccion gftr', '5555', '2023-04-06', 'andro@hotmail.com'),
 (4, 'Fanny', 'Garnica Benitez', 'La calle de abajo', '55 60 90 90 90', '2005-12-07', 'fanny@gmail.com'),
 (5, 'alan ', 'trinidad', 'san martín', '5514393547', '2004-02-13', 'alanlorenzo69@gmail.com'),
-(6, 'alan ', 'trinidad', 'san martín', '5514393547', '2004-02-13', 'alanlorenzo69@gmail.com');
+(6, 'alan ', 'trinidad', 'san martín', '5514393547', '2004-02-13', 'alanlorenzo69@gmail.com'),
+(7, 'Abraham', 'Iturbide Lopez', 'hjgsdkjjksd', '5560974947', '2004-01-23', 'dl2369034@gmail.com');
 
 --
 -- Índices para tablas volcadas
@@ -125,13 +134,13 @@ ALTER TABLE `lugar`
 -- AUTO_INCREMENT de la tabla `plantel`
 --
 ALTER TABLE `plantel`
-  MODIFY `Id_plantel` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_plantel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `registro`
 --
 ALTER TABLE `registro`
-  MODIFY `Id_registro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Id_registro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

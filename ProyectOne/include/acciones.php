@@ -1,24 +1,24 @@
-<?php / recuperar e insertar datos
- include "coneccion.php";
- if (sset($_POST['btn'])){
-    $nombre = $conecta -> real_escape_string($_POST['nombre']);
-    $apellidos = $conex -> real_escape_string($_POST['apellidos']);
-    $direccion = $conex -> real_escape_string($_POST['direccion']);
-    $telefono = $conex -> real_escape_string($_POST['telefono']);
-    $fecha_nac = $conex -> real_escape_string($_POST['fecha_nac']);
-    $email = $conex -> real_escape_string($_POST['email']);
-    if ($nombre == " " || $apellidos == " " || $direccion == " " || $telefono == " " || $fecha_nac == " " || $email == " "){
-        $alerta = "ALGUNO DE LOS DATOS ESTAN VACIOS";
+<?php include "coneccion.php";
+// Recuperar e insertar datos        
+ if (isset($_POST['btn'])){
+    $nombre= $conex -> real_escape_string($_POST['Nombre']);
+    $apellidos= $conex -> real_escape_string($_POST['Apellidos']);
+    $direccion= $conex -> real_escape_string($_POST['Direccion']);
+    $telefono= $conex -> real_escape_string($_POST['Telefono']);
+    $fecha_nac= $conex -> real_escape_string($_POST['FechaN']);
+    $email= $conex -> real_escape_string($_POST['Email']);
+    if ($nombre=="" || $apellidos=="" || $direccion=="" || $telefono=="" || $fecha_nac=="" || $email ==""){
+        $alerta ="ALGUNO DE LOS DATOS ESTAN VACIOS";
     }
     else {
- $registro = "INSERT INTO Usuario(nombre, apellidos, direccion, telefono, fecha_nac, email) VALUES ('$nombre', '$apellidos', '$direccion', '$telefono', 'fecha_nac', 'email')";
+ $registro = "INSERT INTO practica_3.registro(nombre, apellidos, direccion, telefono, fecha_nac, email_lugar) VALUES ('$nombre', '$apellidos', '$direccion', '$telefono', '$fecha_nac', '$email')";
  $registro = $conex -> query ($registro);
- if ($registros>o)
-    }
+ if ($registro>0){   
     echo "registro exitoso";
- }else{
+}
+ else{
     echo "error al registrar";
  }
-
+    }
+}
 ?>
- 
